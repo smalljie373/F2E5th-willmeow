@@ -12,9 +12,11 @@
               不再藏在箱子裡，威爾喵為每隻貓站出來！<br />如果你認同我的理念，請支持我，請加入改變的行列。<br />
               這一次，為喵國的未來一起努力！
             </p>
-            <button type="button" class="btn bg-purple-600 text-white w-auto lg:w-1/3">
-              候選人簡介
-            </button>
+            <router-link
+              to="/intro"
+              class="btn bg-purple-600 text-white text-center w-auto lg:w-1/3"
+              >候選人簡介</router-link
+            >
           </div>
         </div>
       </section>
@@ -131,60 +133,22 @@
     <section class="container py-20">
       <h2 class="text-5xl text-white text-center font-bold mb-10">最新消息</h2>
       <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 grid-flow-row gap-4">
-        <li class="border border-slate-600 rounded-2xl flex flex-col relative">
-          <img src="../assets/images/catNews1.svg" alt="catNews1" class="rounded-t-[1rem]" />
+        <li
+          class="border border-slate-600 rounded-2xl flex flex-col relative"
+          v-for="item in newsData"
+          :key="item.id"
+        >
+          <img :src="item.imgUrl" alt="catNews1" class="rounded-t-[1rem]" />
           <div class="p-4">
             <h4 class="text-white font-bold text-2xl">
-              貓黨30週年紀念活動，邀請您一起Chill out 吸貓草
+              {{ item.title }}
             </h4>
             <p class="whitespace-nowrap text-ellipsis overflow-hidden text-gray-500">
-              嚴禁貓奴才中途烙跑的喵咪法條，保護每一隻貓咪的權益
+              {{ item.content }}
             </p>
             <a
               href="#"
               class="block py-10 text-2xl text-purple-500 font-bold stretched-link hover:text-purple-400"
-              ><span> 閱讀更多 </span></a
-            >
-          </div>
-        </li>
-        <li class="border border-slate-600 rounded-2xl flex flex-col">
-          <img src="../assets/images/catNews1.svg" alt="catNews1" class="rounded-t-[1rem]" />
-          <div class="p-4">
-            <h4 class="text-white font-bold text-2xl">
-              貓黨30週年紀念活動，邀請您一起Chill out 吸貓草
-            </h4>
-            <p class="whitespace-nowrap text-ellipsis overflow-hidden text-gray-500">
-              嚴禁貓奴才中途烙跑的喵咪法條，保護每一隻貓咪的權益
-            </p>
-            <a href="#" class="block py-10 text-2xl text-purple-500 font-bold"
-              ><span> 閱讀更多 </span></a
-            >
-          </div>
-        </li>
-        <li class="border border-slate-600 rounded-2xl flex flex-col">
-          <img src="../assets/images/catNews1.svg" alt="catNews1" class="rounded-t-[1rem]" />
-          <div class="p-4">
-            <h4 class="text-white font-bold text-2xl">
-              貓黨30週年紀念活動，邀請您一起Chill out 吸貓草
-            </h4>
-            <p class="whitespace-nowrap text-ellipsis overflow-hidden text-gray-500">
-              嚴禁貓奴才中途烙跑的喵咪法條，保護每一隻貓咪的權益
-            </p>
-            <a href="#" class="block py-10 text-2xl text-purple-500 font-bold"
-              ><span> 閱讀更多 </span></a
-            >
-          </div>
-        </li>
-        <li class="border border-slate-600 rounded-2xl flex flex-col">
-          <img src="../assets/images/catNews1.svg" alt="catNews1" class="rounded-t-[1rem]" />
-          <div class="p-4">
-            <h4 class="text-white font-bold text-2xl">
-              貓黨30週年紀念活動，邀請您一起Chill out 吸貓草
-            </h4>
-            <p class="whitespace-nowrap text-ellipsis overflow-hidden text-gray-500">
-              嚴禁貓奴才中途烙跑的喵咪法條，保護每一隻貓咪的權益
-            </p>
-            <a href="#" class="block py-10 text-2xl text-purple-500 font-bold"
               ><span> 閱讀更多 </span></a
             >
           </div>
@@ -200,7 +164,9 @@
           <p class="text-center text-gray-500 py-3">
             您的每一筆抖內都將讓一隻貓咪過上更好的生活。<br />點擊下方抖內按鈕，讓我們的貓咪生活更美好！
           </p>
-          <button type="button" class="btn bg-purple-600 text-white w-auto">立即抖內</button>
+          <router-link to="/donate" class="btn bg-purple-600 text-white w-auto"
+            >立即抖內</router-link
+          >
         </div>
       </div>
     </section>
@@ -220,7 +186,7 @@
               電子郵件
             </label>
             <input
-              class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+              class="appearance-none block w-full bg-transparent text-white border rounded py-3 px-4 mb-3 leading-tight focus:outline-none"
               id="useremail"
               type="email"
               placeholder="請輸入電子郵件"
@@ -234,7 +200,7 @@
               您的姓名
             </label>
             <input
-              class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+              class="appearance-none block w-full bg-transparent text-white border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:border-gray-500"
               id="username"
               type="text"
               placeholder="請輸入您的姓名"
@@ -244,7 +210,7 @@
         <div class="flex flex-wrap -mx-3 mb-6">
           <div class="w-full px-3">
             <label
-              class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+              class="block uppercase tracking-wide text-white text-xs font-bold mb-2"
               for="content"
             >
               您的建言
@@ -254,7 +220,7 @@
               id="content"
               cols="30"
               rows="10"
-              class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+              class="appearance-none block w-full bg-transparent text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:border-gray-500"
               placeholder="請輸入內容"
             ></textarea>
           </div>
@@ -271,6 +237,10 @@
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import { Autoplay } from 'swiper/modules'
 import 'swiper/css'
+import { overallDataStore } from '@/stores/overallDataStore'
+import { storeToRefs } from 'pinia'
+const overallData = overallDataStore()
+const { newsData } = storeToRefs(overallData)
 </script>
 
 <style scoped>

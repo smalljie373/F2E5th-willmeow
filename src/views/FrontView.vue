@@ -47,10 +47,10 @@
         :class="[!navbarBtn ? 'opacity-0 top-[-248px]' : 'top-[80px] opacity-100']"
       >
         <li class="mx-3 my-6 md:my-0 text-white hover:text-purple-500 ease-in duration-75">
-          最新消息
+          <router-link to="/news" class="my-auto">最新消息</router-link>
         </li>
         <li class="mx-3 my-6 md:my-0 text-white hover:text-purple-500 ease-in duration-75">
-          <router-link to="/about" class="my-auto"> 喵咪政見 </router-link>
+          <router-link to="/about" class="my-auto">喵咪政見</router-link>
         </li>
         <li class="mx-3 my-6 md:my-0 text-white hover:text-purple-500 ease-in duration-75">
           <router-link to="/donate" class="my-auto">抖內罐罐</router-link>
@@ -70,10 +70,18 @@
         </router-link>
         <div>
           <ul class="flex justify-between flex-col md:flex-row my-2">
-            <li class="px-3 py-3 text-white hover:text-purple-500 ease-in duration-75">最新消息</li>
-            <li class="px-3 py-3 text-white hover:text-purple-500 ease-in duration-75">喵咪政見</li>
-            <li class="px-3 py-3 text-white hover:text-purple-500 ease-in duration-75">抖內罐罐</li>
-            <li class="px-3 py-3 text-white hover:text-purple-500 ease-in duration-75">喵咪信箱</li>
+            <li class="px-3 py-3 text-white hover:text-purple-500 ease-in duration-75">
+              <router-link to="/news" class="my-auto">最新消息</router-link>
+            </li>
+            <li class="px-3 py-3 text-white hover:text-purple-500 ease-in duration-75">
+              <router-link to="/about" class="my-auto">喵咪政見</router-link>
+            </li>
+            <li class="px-3 py-3 text-white hover:text-purple-500 ease-in duration-75">
+              <router-link to="/donate" class="my-auto">抖內罐罐</router-link>
+            </li>
+            <li class="px-3 py-3 text-white hover:text-purple-500 ease-in duration-75">
+              <router-link to="/contact" class="my-auto">喵咪信箱</router-link>
+            </li>
           </ul>
           <ul class="flex items-center">
             <li class="px-3 text-white hover:text-purple-500 ease-in duration-75">
@@ -141,9 +149,14 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 const navbarBtn = ref(false)
 const toggleType = () => {
   navbarBtn.value = !navbarBtn.value
 }
+onMounted(() => {
+  if (navbarBtn.value === true) {
+    navbarBtn.value = !navbarBtn.value
+  }
+})
 </script>
