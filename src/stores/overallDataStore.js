@@ -59,25 +59,29 @@ export const overallDataStore = defineStore('overalldata', () => {
       id: '7Df9Gh3K2j1P6s8',
       title: '貓黨30週年紀念活動，邀請您一起Chill out 吸貓草',
       content: '嚴禁貓奴才中途烙跑的喵咪法條，保護每一隻貓咪的權益',
-      imgUrl: './src/assets/images/catNews1.svg'
+      imgUrl:
+        'https://raw.githubusercontent.com/smalljie373/F2E5th-willmeow/18ceb88679d90d90fe16fa5e75adb42acaad7ce5/src/assets/images/catNews1.svg'
     },
     {
       id: 'b5T9pL2oQ7i4F1',
       title: 'Meowcast： 威爾喵的政貓時刻',
       content: '嚴禁貓奴才中途烙跑的喵咪法條，保護每一隻貓咪的權益',
-      imgUrl: './src/assets/images/catNews2.svg'
+      imgUrl:
+        'https://raw.githubusercontent.com/smalljie373/F2E5th-willmeow/18ceb88679d90d90fe16fa5e75adb42acaad7ce5/src/assets/images/catNews2.svg'
     },
     {
       id: 'R3kP6lA2j9f7Ht',
       title: '「Lofi Cat」 24小時音樂直播上線',
       content: '嚴禁貓奴才中途烙跑的喵咪法條，保護每一隻貓咪的權益',
-      imgUrl: './src/assets/images/catNews3.svg'
+      imgUrl:
+        'https://raw.githubusercontent.com/smalljie373/F2E5th-willmeow/18ceb88679d90d90fe16fa5e75adb42acaad7ce5/src/assets/images/catNews3.svg'
     },
     {
       id: '5s8F2hG4rT1qP9',
       title: '貓黨30週年紀念活動，邀請您一起Chill out 吸貓草',
       content: '嚴禁貓奴才中途烙跑的喵咪法條，保護每一隻貓咪的權益',
-      imgUrl: './src/assets/images/catNews4.svg'
+      imgUrl:
+        'https://raw.githubusercontent.com/smalljie373/F2E5th-willmeow/18ceb88679d90d90fe16fa5e75adb42acaad7ce5/src/assets/images/catNews4.svg'
     }
   ])
   const isLoading = ref(false)
