@@ -1,4 +1,5 @@
 <template>
+  <LoadingPage></LoadingPage>
   <header class="sticky top-0">
     <nav class="p-5 bg-[#0A0A20] shadow md:flex md:items-center md:justify-between">
       <div class="flex justify-between items-center">
@@ -150,13 +151,27 @@
 
 <script setup>
 import { ref, onMounted } from 'vue'
+import { useRouter } from 'vue-router'
+import LoadingPage from '@/components/LoadingPage.vue'
+import { overallDataStore } from '@/stores/overallDataStore'
+import { storeToRefs } from 'pinia'
+const overallData = overallDataStore()
+const { isLoading } = storeToRefs(overallData)
+const { loadingType } = overallData
 const navbarBtn = ref(false)
+const router = useRouter()
 const toggleType = () => {
   navbarBtn.value = !navbarBtn.value
 }
+const setupRouterGuard = (router) => {
+  router.beforeEach((to, from, next) => {
+    // 在每次路由切換前，將 navbar 收起
+    navbarBtn.value = false
+    loadingType()
+    next()
+  })
+}
 onMounted(() => {
-  if (navbarBtn.value === true) {
-    navbarBtn.value = !navbarBtn.value
-  }
+  setupRouterGuard(router)
 })
 </script>

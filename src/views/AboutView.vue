@@ -1,5 +1,5 @@
 <template>
-  <main class="container mx-auto px-11">
+  <main class="container mx-auto px-11" v-if="screenType">
     <h2 class="text-center text-white text-3xl font-bold my-8">威爾喵政見發表會</h2>
     <p class="text-xl text-end text-gray-400">發表日期：2023-11-04</p>
     <div class="flex justify-center items-center my-5">
@@ -41,3 +41,10 @@
     </section>
   </main>
 </template>
+
+<script setup>
+import { overallDataStore } from '@/stores/overallDataStore'
+import { storeToRefs } from 'pinia'
+const overallData = overallDataStore()
+const { screenType } = storeToRefs(overallData)
+</script>

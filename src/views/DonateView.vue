@@ -1,5 +1,5 @@
 <template>
-  <main class="container mx-auto">
+  <main class="container mx-auto" v-if="screenType">
     <h2 class="md:text-center text-white text-4xl font-bold py-5">愛心斗內，拯救貓咪！</h2>
     <p class="md:text-center text-gray-400 text-xl">您的每一筆抖內都將讓一隻貓咪過上更好的生活。</p>
     <p class="md:text-center text-gray-400 text-xl">
@@ -57,7 +57,7 @@ import { overallDataStore } from '@/stores/overallDataStore'
 import { storeToRefs } from 'pinia'
 import { ref } from 'vue'
 const overallData = overallDataStore()
-const { donateData, questionsAndanswers } = storeToRefs(overallData)
+const { donateData, questionsAndanswers, screenType } = storeToRefs(overallData)
 
 const status = ref({
   loadingItem: ''

@@ -1,5 +1,5 @@
 <template>
-  <main class="container mx-auto">
+  <main class="container mx-auto" v-if="screenType">
     <h2 class="text-white text-center font-bold text-4xl mb-2">最新消息</h2>
     <p class="text-gray-500 text-center text-xl mb-2">威爾喵立委：最新政治動態與未來展望</p>
     <p class="text-gray-500 text-center text-xl">解析最新政治走向：威爾喵立委的角色與策略</p>
@@ -34,5 +34,5 @@
 import { overallDataStore } from '@/stores/overallDataStore'
 import { storeToRefs } from 'pinia'
 const overallData = overallDataStore()
-const { newsData } = storeToRefs(overallData)
+const { newsData, screenType } = storeToRefs(overallData)
 </script>

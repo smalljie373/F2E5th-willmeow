@@ -1,5 +1,5 @@
 <template>
-  <main>
+  <main v-if="screenType">
     <div class="container">
       <section class="flex justify-center mb-6 md:mb-0">
         <div
@@ -240,7 +240,7 @@ import 'swiper/css'
 import { overallDataStore } from '@/stores/overallDataStore'
 import { storeToRefs } from 'pinia'
 const overallData = overallDataStore()
-const { newsData } = storeToRefs(overallData)
+const { newsData, screenType } = storeToRefs(overallData)
 </script>
 
 <style scoped>

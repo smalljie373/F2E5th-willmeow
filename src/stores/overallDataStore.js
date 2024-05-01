@@ -1,4 +1,4 @@
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import { defineStore } from 'pinia'
 
 export const overallDataStore = defineStore('overalldata', () => {
@@ -80,5 +80,17 @@ export const overallDataStore = defineStore('overalldata', () => {
       imgUrl: './src/assets/images/catNews4.svg'
     }
   ])
-  return { donateData, questionsAndanswers, newsData }
+  const isLoading = ref(false)
+  const screenType = ref(false)
+  const loadingType = () => {
+    screenType.value = false
+    isLoading.value = !isLoading.value
+    setTimeout(() => {
+      screenType.value = true
+    }, 2500)
+  }
+  onMounted(() => {
+    loadingType()
+  })
+  return { donateData, questionsAndanswers, newsData, isLoading, loadingType, screenType }
 })

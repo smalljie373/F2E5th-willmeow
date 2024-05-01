@@ -1,5 +1,5 @@
 <template>
-  <main class="container">
+  <main class="container" v-if="screenType">
     <section class="flex justify-center mb-6 md:mb-0">
       <div
         class="grid grid-cols-1 md:grid-cols-2 grid-flow-row gap-2 bg-[url('../assets/images/background.svg')] bg-cover bg-no-repeat bg-center"
@@ -23,3 +23,10 @@
     </section>
   </main>
 </template>
+
+<script setup>
+import { overallDataStore } from '@/stores/overallDataStore'
+import { storeToRefs } from 'pinia'
+const overallData = overallDataStore()
+const { screenType } = storeToRefs(overallData)
+</script>

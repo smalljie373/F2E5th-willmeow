@@ -1,5 +1,5 @@
 <template>
-  <main class="container mx-auto">
+  <main class="container mx-auto" v-if="screenType">
     <h2 class="md:text-center text-white font-bold text-4xl py-5">您的聲音，我們的行動！</h2>
     <p class="md:text-center text-gray-500 text-xl">
       親愛的朋友們，每一位喵民的意見都是我們前進的原動力。
@@ -62,3 +62,10 @@
     </form>
   </main>
 </template>
+
+<script setup>
+import { overallDataStore } from '@/stores/overallDataStore'
+import { storeToRefs } from 'pinia'
+const overallData = overallDataStore()
+const { screenType } = storeToRefs(overallData)
+</script>
