@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.logo {
+  @apply overflow-hidden whitespace-nowrap indent-[101%] bg-cover bg-no-repeat bg-[url('./images/logo-ce1061e2.svg')] w-[108px] h-[24px] hover:opacity-70 hover:scale-110;
+}
+.btn {
+  @apply py-3 px-8 rounded-lg hover:opacity-70;
+}
+.stretched-link::after {
+  @apply content-[''] absolute top-0 right-0 left-0 bottom-0 z-[1];
+}
