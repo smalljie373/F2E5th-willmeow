@@ -34,7 +34,7 @@ onMounted(() => {
     renderer: 'svg',
     loop: true,
     autoplay: true,
-    path: './src/assets/AnimationCat.json'
+    path: './src/assets/loadingfier/AnimationCat.json'
   })
   animat = gsap.timeline({ paused: true })
   animat
