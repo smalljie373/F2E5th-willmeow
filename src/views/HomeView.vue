@@ -116,7 +116,9 @@
             <p class="text-gray-400 text-lg">
               威爾喵是一名充滿活力、具有政治經驗的候選人，致力於改變社會，並為人民提供更好的生活。政策目標旨在實現更公平、更繁榮、更可持續的社會和經濟。
             </p>
-            <a href="#" class="text-2xl text-purple-500 pt-5 font-bold"><span>閱讀更多</span></a>
+            <router-link to="/about" class="text-2xl text-purple-500 pt-5 font-bold"
+              ><span>閱讀更多</span></router-link
+            >
           </div>
           <img
             src="../assets/images/catConference.svg"
