@@ -1,6 +1,6 @@
 <template>
   <LoadingPage></LoadingPage>
-  <header class="sticky top-0">
+  <header class="sticky top-0 z-[999]">
     <nav class="p-5 bg-[#0A0A20] shadow md:flex md:items-center md:justify-between">
       <div class="flex justify-between items-center">
         <router-link to="/" class="my-auto">
@@ -156,7 +156,6 @@ import LoadingPage from '@/components/LoadingPage.vue'
 import { overallDataStore } from '@/stores/overallDataStore'
 import { storeToRefs } from 'pinia'
 const overallData = overallDataStore()
-const { isLoading } = storeToRefs(overallData)
 const { loadingType } = overallData
 const navbarBtn = ref(false)
 const router = useRouter()

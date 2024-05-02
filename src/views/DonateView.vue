@@ -35,7 +35,7 @@
     </section>
     <p class="md:text-center text-xl text-gray-500">＊一顆罐罐等值為 NT$ 1</p>
     <section class="py-5">
-      <h4 class="text-4xl text-white md:text-center font-bold mb-3">常見問題</h4>
+      <h4 class="text-4xl text-white text-center font-bold mb-3">常見問題</h4>
       <ul class="flex flex-col justify-center items-center">
         <li
           v-for="item in questionsAndanswers"

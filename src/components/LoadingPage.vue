@@ -1,12 +1,14 @@
 <template>
-  <div
-    class="h-screen text-white fixed w-full z-[9999] bg-black flex justify-center items-center"
-    ref="box"
-  >
-    <div class="lottieContainer w-[250px] opacity-0" ref="lottieContainer"></div>
-  </div>
-  <div class="h-screen fixed w-0 z-[9999] bg-lime-600" ref="screen2"></div>
-  <div class="h-screen fixed w-0 z-[9999] bg-teal-600" ref="screen3"></div>
+  <section>
+    <div
+      class="h-screen text-white fixed w-full z-[9999] bg-black flex justify-center items-center"
+      ref="box"
+    >
+      <div class="lottieContainer w-[250px] opacity-0" ref="lottieContainer"></div>
+    </div>
+    <div class="h-screen fixed w-0 z-[9999] bg-lime-600" ref="screen2"></div>
+    <div class="h-screen fixed w-0 z-[9999] bg-teal-600" ref="screen3"></div>
+  </section>
 </template>
 
 <script setup>
