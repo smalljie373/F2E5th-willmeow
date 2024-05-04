@@ -17,6 +17,10 @@
 - **Tailwind CSS**: Responsive CSS framework for styling.
 - **GSAP**: GSAP (GreenSock Animation Platform) is a powerful JavaScript animation library used to create smooth, interactive, and high-performance animation effects. It is widely regarded as one of the best animation solutions for web and mobile app development.
 
+## 示意圖
+
+![示意圖](https://raw.githubusercontent.com/smalljie373/F2E5th-willmeow/main/image01.png)
+
 ## 資料夾配置
 
 src/
